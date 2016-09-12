@@ -17,4 +17,4 @@ sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip ". ./alfresco-c
 # verification
 echo "== Verification =="
 #sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip "sudo docker ps "
-#firefox http://192.168.33.10:3000
+firefox http://192.168.33.10:8080/share
