@@ -9,10 +9,10 @@ sshpass -p 1234 scp -o StrictHostKeyChecking=no ./alfres*.bin $username@$ip:/hom
 sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip "sudo apt-get -y install libfontconfig1 libice6 libsm6 libcups2 libxinerama1 libxext6 libxrender1 libglu1-mesa"
 
 sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip "chmod +x alfresco-community-installer-*-linux-x64.bin"
-sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip "./alfresco-community-installer-*-linux-x64.bin"
 
-# run alfresco service
-sshpass -p 1234 ssh -o StrictHostKeyChecking=no -t $username@$ip ". ./alfresco-community/alfresco.sh restart"
+# run alfresco service (tomcat without -t option)
+sshpass -p 1234 ssh -o StrictHostKeyChecking=no  $username@$ip "./alfresco-community-installer-*-linux-x64.bin"
+
 
 # verification
 echo "== Verification =="
